@@ -1,12 +1,38 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
 
-double case1 (double a, double b, double c) 
+bool chetn(int a)
 {
-return ((b - sqrt(pow(b,2) + 4*a*c)/2*a) - pow(a,3) * c + pow(b, -2));
-} 
+  return a >= 10 && a <= 99 && a%2==0 ;
+}
+
+bool ravnostoron(int a, int b, int c)
+{
+  return a==b==c;
+}
+
+bool ravnnobed(int a, int b, int c)
+{
+  return a==b || a==c || b == c || a==b==c;
+}
+
+bool sred( int a, int b, int c)
+{
+  return (a+b)/2==c;
+}
 
 int main() {
-  cout<<"Результаты для значений a=2.2 b=5.4 c=3.5 ." <<" "<< case1(2.2 , 5.4, 3.5);
+  int a,b,c;
+  int f,k,l;
+  int n;
+  cout << "Введите число ";
+  cin >> n;
+  cout << "введите стороны треугольника ";
+  cin >> a >> b >> c;
+  cout << "Введите числа ( сред арифмет ) ";
+  cin >> f >> k >> l;
+  cout << "Двузначное и четное? " << chetn(n) << "\n";
+  cout << "Равносторонний? " << ravnostoron(a, b, c) << "\n";
+  cout << "Равнобедренный? " << ravnostoron(a, b, c) << "\n";
+  cout << "Является ли среднеариметическим? " << sred(f, k, l);
 }
